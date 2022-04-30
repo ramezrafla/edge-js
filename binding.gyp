@@ -18,7 +18,9 @@
   'targets': [
     {
       'target_name': 'edge_coreclr',
-      'win_delay_load_hook': 'false',
+      # in order to bundle with pkg
+      # https://github.com/vercel/pkg/issues/161
+      'win_delay_load_hook': 'true',
       'include_dirs': [
         "<!(node -e \"require('nan')\")"
       ],
